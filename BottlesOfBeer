@@ -1,0 +1,28 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+void poem(int);
+
+int main(){
+
+    poem(100);
+	return 0;
+}
+
+void poem(int n){
+    if( n <= 0){
+        cout << n << " bottles of beer on the wall" << endl;
+        return;
+    }
+
+    cout << n << " bottles of beer on the wall" << endl;
+    cout << n << " bottles of beer" << endl;
+    cout << "Take one down, pass it around" << endl;
+    poem(n - 1);
+}
+
+
+
