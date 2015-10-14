@@ -1,0 +1,28 @@
+package org.jeet.learn;
+
+import java.util.Stack;
+
+public class ReverseStackTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Stack<Integer> st = new Stack<Integer>();
+		st.push(3);st.push(5);st.push(7);
+		revers(st);
+		System.out.println(st);
+	}
+
+	private static void  revers(Stack<Integer> st) {
+		if(st.empty())
+			return;
+		
+		int k = st.pop();
+		
+		//System.out.println(k);
+		revers(st);
+		int size = st.size();
+		st.insertElementAt(k, 0);
+		
+	}
+
+}
