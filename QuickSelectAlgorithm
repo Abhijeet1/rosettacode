@@ -1,0 +1,46 @@
+package org.jeet.learn;
+
+import java.util.Random;
+
+/*
+ * Display top 10 largest numbers
+ */
+public class QuickSelectAlgorithm {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] a = new int[]{40,30,10,20,90,80,50,60,70};
+		int rand = 3;
+		
+			partition(a, rand);
+		for(int i = 0 ; i < a.length ; i++){
+			System.out.print(" " + a[i]);
+		}
+		
+	}
+	
+	public static void partition(int[] a, int i){
+		int p = 0;
+		int q = a.length-1;
+		int temp;
+		while(q>p){
+			if(a[p] < a[i]){
+				p++;
+			}else{
+				temp = a[i];
+				a[i] = a[p];
+				a[p] = temp;
+				i = p;
+			}
+			if(a[q] > a[i]){
+				q--;
+			}else{
+				temp = a[i];
+				a[i] = a[q];
+				a[q] = temp;
+				i = q;
+			}
+		}
+	}
+
+}
